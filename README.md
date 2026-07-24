@@ -34,7 +34,7 @@ giving school health staff a centralized portal to manage submissions,
 track consent status, and reduce manual follow-up.
 
 ## Tech Stack
-**Frontend:** HTML, CSS, JavaScript
+**Frontend:** HTML, CSS, JavaScript, React
 **Backend:** Node.js, Express.js  
 **Database:** PostgreSQL (planned)
 **Authentication:** Passport.js (planned)
@@ -43,11 +43,26 @@ track consent status, and reduce manual follow-up.
 
 🚧 **This project is actively in development. **
 
-- [x] Parent consent form — Student Information section
-- [x] Parent consent form — Vaccination History section
-- [x] Parent consent form — Health History section
-- [x] Parent consent form — Consent section
-- [x] Express server with `/submit-form` endpoint
+    ✅ React project setup (using Vite or Create React App)
+    ✅ Created multiple components (StudentInformation, VaccineHistory, Header)
+    ✅ Organized files in a components folder
+    ✅ Imported/exported components correctly
+    ✅ Clean HTML/JSX structure with forms
+    ✅ Basic CSS styling
+    ✅ Pushed to GitHub
+    ✅ Fixed common React gotchas (className, htmlFor, self-closing tags)
+
+
+    📋 Remaining Tasks
+      □ Add state - useState for form data and submission status
+      □ Connect inputs - Add value/onChange/checked to all form fields
+      □ Handle submit - Submit handler with e.preventDefault() and console.log
+      □ Show success - Display submitted data and success message
+      □ Add validation - Required fields, phone number, date validation
+      □ Show errors - Display error messages inline
+      □ API integration - Connect to backend and save data
+      □ Deploy - Deploy to Vercel/Netlify or GitHub Pages
+      
 - [ ] PostgreSQL database connection
 - [ ] Nurse portal
 - [ ] Admin portal
