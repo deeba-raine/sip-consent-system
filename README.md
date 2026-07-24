@@ -6,7 +6,7 @@ The goal of this project is to transition the School Immunization Program (SIP) 
 
 This project is being built incrementally: starting with core consent form 
 functionality (MVP), then expanding to include role-based staff portals for 
-nurses and admins, authentication, and full database integration. See the 
+nurses and admins, authentication, and full database integration. See the  
 **Status** section below for current progress.
 
 ## Problem
