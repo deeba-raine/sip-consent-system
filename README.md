@@ -25,8 +25,11 @@ organizing, and storing forms — diverting time from clinical work.
 
 ## Solution
 
-SIP-APP digitizes this process with an electronic consent (eConsent) system — 
-allowing parents to submit complete, validated consent forms online, and 
+SIP-APP digitizes this process with an electronic consent (eConsent) system. 
+Unlike paper forms, required fields are validated before submission — 
+eliminating incomplete submissions entirely. Consent status is tracked in 
+real time as Pending or Submitted, removing the need for manual logs, 
+follow-up calls, or redistribution cycles, and 
 giving school health staff a centralized portal to manage submissions, 
 track consent status, and reduce manual follow-up.
 
