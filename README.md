@@ -69,11 +69,4 @@ track consent status, and reduce manual follow-up.
 - [ ] Role-based authentication
 
 ## Project Structure
-SCHOOL-IMMUNIZATION-CONSENT-SYSTEM/
-├── frontend/
-│   └── parent/
-│       ├── parent-consent-form.html
-│       └── style.css
-├── backend/
-│   └── server.js
-└── README.md
+
