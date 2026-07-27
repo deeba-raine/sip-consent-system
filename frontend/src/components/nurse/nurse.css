@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 260px auto;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas:
+        "aside header"
+        "aside main";
+   
+    padding: 5px;
+}
+
+
+/* HEADER */
+header {
+    grid-area: header;
+    background-color: white;
+    height: 60px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    position: relative;
+   
+}
+
+header h1 {
+    color: #003876;
+    margin-left: 30px;
+}
+
+
+/* SIDEBAR */
+aside {
+    grid-area: aside;
+    height: 730px;
+    background-color: #003876;
+    color: aliceblue;
+    font-weight: 400;
+}
+
+
+/* NAVIGATION */
+nav ul {
+    height: 730px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px 20px;
+    list-style: none;
+}
+
+
+nav li {
+    cursor: pointer;
+    padding: 10px;
+}
+
+
+nav li:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+
+/* SIDEBAR TITLE */
+.portal-title {
+    margin-bottom: 60px;
+}
+
+
+/* ICON + TEXT */
+.icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.icons img {
+    width: 24px;
+    height: 18px;
+    object-fit: contain;
+}
+
+
+/* USER PROFILE AT BOTTOM */
+.user {
+    margin-top: auto;
+}
+
+
+/* MAIN CONTENT */
+main {
+    grid-area: main;
+    min-height: 650px;
+    display: grid;
+    row-gap: 10px;
+    padding: 10px;
+    background-color: rgb(251, 253, 255);
+}
+
+
+main section {
+    background-color: aquamarine;
+    border: 2px solid red;
+}
