@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Header from '../components/parent/Header';
 import StudentInformation from '../components/parent/StudentInformation';
 import VaccineHistory from '../components/parent/VaccineHistory';
@@ -8,7 +9,7 @@ import SubmitButton from '../components//parent/SubmitButton';
 
 function ParentConsent() {
 
-    const [consentForm, setConsentFrom] = useState({
+    const [consentForm, setConsentForm] = useState({
         studentInformation: {
             lastName: "",
             firstName: "",
@@ -96,11 +97,11 @@ function ParentConsent() {
         <div>
             <Header />
             <form onSubmit={handleSubmit}>
-                <StudentInformation />
-                <VaccineHistory />
-                <HealthHistory />
-                <ConsentForVaccination />
-                <ConsentDeclaration />
+                <StudentInformation data={consentForm.studentInformation} />
+                <VaccineHistory data={consentForm.vaccineHistory} />
+                <HealthHistory data={consentForm.healthHistory}/>
+                <ConsentForVaccination data={consentForm.consentForVaccination}/>
+                <ConsentDeclaration data={consentForm.consentDeclaration}/>
                 <SubmitButton />
             </form>
         </div>
