@@ -1,4 +1,4 @@
-function ConsentForVaccination({ data }) {
+function ConsentForVaccination({ data, handleChange }) {
     return (
         <div className="form-section">
             <fieldset>
@@ -23,37 +23,17 @@ function ConsentForVaccination({ data }) {
                         <div className="option-group">
 
                             <div className="option">
-                                <input
-                                    type="radio"
-                                    id="meningococcalYes"
-                                    name="meningococcal"
-                                    value="yes"
-                                    checked={data.meningococcal === "yes"}
-                                />
-
-                                <label htmlFor="meningococcalYes">
-                                    Yes
-                                </label>
+                                <input type="radio" id="meningococcalYes" name="meningococcal" value="yes" checked={data.meningococcal === "yes"} onChange={handleChange} />
+                                <label htmlFor="meningococcalYes">Yes</label>
                             </div>
 
-
                             <div className="option">
-                                <input
-                                    type="radio"
-                                    id="meningococcalNo"
-                                    name="meningococcal"
-                                    value="no"
-                                    checked={data.meningococcal === "no"}
-                                />
-
-                                <label htmlFor="meningococcalNo">
-                                    No
-                                </label>
+                                <input type="radio" id="meningococcalNo" name="meningococcal" value="no" checked={data.meningococcal === "no"} onChange={handleChange} />
+                                <label htmlFor="meningococcalNo">No</label>
                             </div>
 
                         </div>
                     </li>
-
 
 
                     {/* HPV */}
@@ -63,38 +43,17 @@ function ConsentForVaccination({ data }) {
                         <div className="option-group">
 
                             <div className="option">
-                                <input
-                                    type="radio"
-                                    id="hpvYes"
-                                    name="hpv"
-                                    value="yes"
-                                    checked={data.hpv === "yes"}
-                                />
-
-                                <label htmlFor="hpvYes">
-                                    Yes
-                                </label>
+                                <input type="radio" id="hpvYes" name="hpv" value="yes" checked={data.hpv === "yes"} onChange={handleChange} />
+                                <label htmlFor="hpvYes">Yes</label>
                             </div>
 
-
                             <div className="option">
-                                <input
-                                    type="radio"
-                                    id="hpvNo"
-                                    name="hpv"
-                                    value="no"
-                                    checked={data.hpv === "no"}
-                                />
-
-                                <label htmlFor="hpvNo">
-                                    No
-                                </label>
+                                <input type="radio" id="hpvNo" name="hpv" value="no" checked={data.hpv === "no"} onChange={handleChange} />
+                                <label htmlFor="hpvNo">No</label>
                             </div>
 
                         </div>
                     </li>
-
-
 
 
                     {/* Hepatitis B */}
@@ -104,37 +63,17 @@ function ConsentForVaccination({ data }) {
                         <div className="option-group">
 
                             <div className="option">
-                                <input
-                                    type="radio"
-                                    id="hepBYes"
-                                    name="hepatitisB"
-                                    value="yes"
-                                    checked={data.hepatitisB === "yes"}
-                                />
-
-                                <label htmlFor="hepBYes">
-                                    Yes
-                                </label>
+                                <input type="radio" id="hepBYes" name="hepatitisB" value="yes" checked={data.hepatitisB === "yes"} onChange={handleChange} />
+                                <label htmlFor="hepBYes">Yes</label>
                             </div>
 
-
                             <div className="option">
-                                <input
-                                    type="radio"
-                                    id="hepBNo"
-                                    name="hepatitisB"
-                                    value="no"
-                                    checked={data.hepatitisB === "no"}
-                                />
-
-                                <label htmlFor="hepBNo">
-                                    No
-                                </label>
+                                <input type="radio" id="hepBNo" name="hepatitisB" value="no" checked={data.hepatitisB === "no"} onChange={handleChange} />
+                                <label htmlFor="hepBNo">No</label>
                             </div>
 
                         </div>
                     </li>
-
 
                 </ul>
 

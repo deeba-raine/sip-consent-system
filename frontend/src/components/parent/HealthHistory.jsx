@@ -1,4 +1,4 @@
-function HealthHistory({ data }) {
+function HealthHistory({ data, handleNestedChange }) {
     return (
         <div className="form-section">
             <fieldset>
@@ -19,9 +19,10 @@ function HealthHistory({ data }) {
                                 <input
                                     type="radio"
                                     id="allergyYes"
-                                    name="allergy"
+                                    name="allergyStatus"
                                     value="yes"
                                     checked={data.allergy.hasAllergy === "yes"}
+                                    onChange={() => handleNestedChange("allergy", { target: { name: "hasAllergy", value: "yes" } })}
                                 />
                                 <label htmlFor="allergyYes">Yes</label>
                             </div>
@@ -30,9 +31,10 @@ function HealthHistory({ data }) {
                                 <input
                                     type="radio"
                                     id="allergyNo"
-                                    name="allergy"
+                                    name="allergyStatus"
                                     value="no"
                                     checked={data.allergy.hasAllergy === "no"}
+                                    onChange={() => handleNestedChange("allergy", { target: { name: "hasAllergy", value: "no" } })}
                                 />
                                 <label htmlFor="allergyNo">No</label>
                             </div>
@@ -40,16 +42,9 @@ function HealthHistory({ data }) {
                         </div>
 
                         <div className="form-field">
-                            <label htmlFor="allergyDetails">
-                                Please explain:
-                            </label>
+                            <label htmlFor="allergyDetails">Please explain:</label>
 
-                            <textarea
-                                id="allergyDetails"
-                                name="allergyDetails"
-                                rows="2"
-                                value={data.allergy.details}
-                            />
+                            <textarea id="allergyDetails" name="details" rows="2" value={data.allergy.details} onChange={(e) => handleNestedChange("allergy", e)} />
                         </div>
                     </li>
 
@@ -66,48 +61,36 @@ function HealthHistory({ data }) {
                                 <input
                                     type="radio"
                                     id="vaccineReactionYes"
-                                    name="vaccineReaction"
+                                    name="vaccineReactionStatus"
                                     value="yes"
                                     checked={data.vaccineReaction.hasReaction === "yes"}
+                                    onChange={() => handleNestedChange("vaccineReaction", { target: { name: "hasReaction", value: "yes" } })}
                                 />
-                                <label htmlFor="vaccineReactionYes">
-                                    Yes
-                                </label>
+                                <label htmlFor="vaccineReactionYes">Yes</label>
                             </div>
-
 
                             <div className="option">
                                 <input
                                     type="radio"
                                     id="vaccineReactionNo"
-                                    name="vaccineReaction"
+                                    name="vaccineReactionStatus"
                                     value="no"
                                     checked={data.vaccineReaction.hasReaction === "no"}
+                                    onChange={() => handleNestedChange("vaccineReaction", { target: { name: "hasReaction", value: "no" } })}
                                 />
-                                <label htmlFor="vaccineReactionNo">
-                                    No
-                                </label>
+                                <label htmlFor="vaccineReactionNo">No</label>
                             </div>
 
                         </div>
 
 
                         <div className="form-field">
-                            <label htmlFor="vaccineReactionDetails">
-                                Please explain:
-                            </label>
+                            <label htmlFor="vaccineReactionDetails">Please explain:</label>
 
-                            <textarea
-                                id="vaccineReactionDetails"
-                                name="vaccineReactionDetails"
-                                rows="2"
-                                value={data.vaccineReaction.details}
-                            />
-
+                            <textarea id="vaccineReactionDetails" name="details" rows="2" value={data.vaccineReaction.details} onChange={(e) => handleNestedChange("vaccineReaction", e)} />
                         </div>
 
                     </li>
-
 
 
                     {/* Fainting */}
@@ -122,48 +105,36 @@ function HealthHistory({ data }) {
                                 <input
                                     type="radio"
                                     id="faintingYes"
-                                    name="fainting"
+                                    name="faintingStatus"
                                     value="yes"
                                     checked={data.fainting.hasHistory === "yes"}
+                                    onChange={() => handleNestedChange("fainting", { target: { name: "hasHistory", value: "yes" } })}
                                 />
-                                <label htmlFor="faintingYes">
-                                    Yes
-                                </label>
+                                <label htmlFor="faintingYes">Yes</label>
                             </div>
-
 
                             <div className="option">
                                 <input
                                     type="radio"
                                     id="faintingNo"
-                                    name="fainting"
+                                    name="faintingStatus"
                                     value="no"
                                     checked={data.fainting.hasHistory === "no"}
+                                    onChange={() => handleNestedChange("fainting", { target: { name: "hasHistory", value: "no" } })}
                                 />
-                                <label htmlFor="faintingNo">
-                                    No
-                                </label>
+                                <label htmlFor="faintingNo">No</label>
                             </div>
 
                         </div>
 
 
                         <div className="form-field">
-                            <label htmlFor="faintingDetails">
-                                Please explain:
-                            </label>
+                            <label htmlFor="faintingDetails">Please explain:</label>
 
-                            <textarea
-                                id="faintingDetails"
-                                name="faintingDetails"
-                                rows="2"
-                                value={data.fainting.details}
-                            />
-
+                            <textarea id="faintingDetails" name="details" rows="2" value={data.fainting.details} onChange={(e) => handleNestedChange("fainting", e)} />
                         </div>
 
                     </li>
-
 
 
                     {/* Immune System */}
@@ -180,51 +151,36 @@ function HealthHistory({ data }) {
                                 <input
                                     type="radio"
                                     id="immuneSystemYes"
-                                    name="immuneSystem"
+                                    name="immuneSystemStatus"
                                     value="yes"
                                     checked={data.immuneSystem.hasCondition === "yes"}
+                                    onChange={() => handleNestedChange("immuneSystem", { target: { name: "hasCondition", value: "yes" } })}
                                 />
-
-                                <label htmlFor="immuneSystemYes">
-                                    Yes
-                                </label>
+                                <label htmlFor="immuneSystemYes">Yes</label>
                             </div>
-
 
                             <div className="option">
                                 <input
                                     type="radio"
                                     id="immuneSystemNo"
-                                    name="immuneSystem"
+                                    name="immuneSystemStatus"
                                     value="no"
                                     checked={data.immuneSystem.hasCondition === "no"}
+                                    onChange={() => handleNestedChange("immuneSystem", { target: { name: "hasCondition", value: "no" } })}
                                 />
-
-                                <label htmlFor="immuneSystemNo">
-                                    No
-                                </label>
+                                <label htmlFor="immuneSystemNo">No</label>
                             </div>
 
                         </div>
 
 
                         <div className="form-field">
-                            <label htmlFor="immuneSystemDetails">
-                                Please explain:
-                            </label>
+                            <label htmlFor="immuneSystemDetails">Please explain:</label>
 
-                            <textarea
-                                id="immuneSystemDetails"
-                                name="immuneSystemDetails"
-                                rows="2"
-                                value={data.immuneSystem.details}
-                            />
-
+                            <textarea id="immuneSystemDetails" name="details" rows="2" value={data.immuneSystem.details} onChange={(e) => handleNestedChange("immuneSystem", e)} />
                         </div>
 
                     </li>
-
-
 
 
                     {/* Serious Medical Condition */}
@@ -233,60 +189,40 @@ function HealthHistory({ data }) {
                             Does the student have a serious medical condition?
                         </p>
 
-
                         <div className="option-group">
 
                             <div className="option">
                                 <input
                                     type="radio"
                                     id="seriousConditionYes"
-                                    name="seriousCondition"
+                                    name="seriousConditionStatus"
                                     value="yes"
                                     checked={data.seriousMedicalCondition.hasCondition === "yes"}
+                                    onChange={() => handleNestedChange("seriousMedicalCondition", { target: { name: "hasCondition", value: "yes" } })}
                                 />
-
-                                <label htmlFor="seriousConditionYes">
-                                    Yes
-                                </label>
-
+                                <label htmlFor="seriousConditionYes">Yes</label>
                             </div>
 
-
                             <div className="option">
-
                                 <input
                                     type="radio"
                                     id="seriousConditionNo"
-                                    name="seriousCondition"
+                                    name="seriousConditionStatus"
                                     value="no"
                                     checked={data.seriousMedicalCondition.hasCondition === "no"}
+                                    onChange={() => handleNestedChange("seriousMedicalCondition", { target: { name: "hasCondition", value: "no" } })}
                                 />
-
-                                <label htmlFor="seriousConditionNo">
-                                    No
-                                </label>
-
+                                <label htmlFor="seriousConditionNo">No</label>
                             </div>
 
                         </div>
 
 
                         <div className="form-field">
+                            <label htmlFor="seriousConditionDetails">Please explain:</label>
 
-                            <label htmlFor="seriousConditionDetails">
-                                Please explain:
-                            </label>
-
-
-                            <textarea
-                                id="seriousConditionDetails"
-                                name="seriousConditionDetails"
-                                rows="2"
-                                value={data.seriousMedicalCondition.details}
-                            />
-
+                            <textarea id="seriousConditionDetails" name="details" rows="2" value={data.seriousMedicalCondition.details} onChange={(e) => handleNestedChange("seriousMedicalCondition", e)} />
                         </div>
-
 
                     </li>
 
