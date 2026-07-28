@@ -1,54 +1,143 @@
-function ConsentForVaccination() {
+function ConsentForVaccination({ data }) {
     return (
         <div className="form-section">
             <fieldset>
                 <legend>Consent for Vaccination</legend>
-                <p>Please read each vaccine description carefully and provide your consent decision for each vaccine below.</p>
-                <p><span className="note-label">Note:</span> Consent is required for each vaccine separately. You may consent to some and decline others.</p>
+
+                <p>
+                    Please read each vaccine description carefully and provide
+                    your consent decision for each vaccine below.
+                </p>
+
+                <p>
+                    <span className="note-label">Note:</span> Consent is required
+                    for each vaccine separately. You may consent to some and decline others.
+                </p>
 
                 <ul>
+
+                    {/* Meningococcal */}
                     <li>
                         <p>Meningococcal Vaccine (1 dose)</p>
+
                         <div className="option-group">
+
                             <div className="option">
-                                <input type="radio" id="meningococcalYes" name="meningococcal" value="yes" required />
-                                <label htmlFor="meningococcalYes">Yes</label>
+                                <input
+                                    type="radio"
+                                    id="meningococcalYes"
+                                    name="meningococcal"
+                                    value="yes"
+                                    checked={data.meningococcal === "yes"}
+                                />
+
+                                <label htmlFor="meningococcalYes">
+                                    Yes
+                                </label>
                             </div>
+
+
                             <div className="option">
-                                <input type="radio" id="meningococcalNo" name="meningococcal" value="no" />
-                                <label htmlFor="meningococcalNo">No</label>
+                                <input
+                                    type="radio"
+                                    id="meningococcalNo"
+                                    name="meningococcal"
+                                    value="no"
+                                    checked={data.meningococcal === "no"}
+                                />
+
+                                <label htmlFor="meningococcalNo">
+                                    No
+                                </label>
                             </div>
+
                         </div>
                     </li>
 
+
+
+                    {/* HPV */}
                     <li>
                         <p>Human Papillomavirus (HPV) Vaccine (2 or 3 doses)</p>
+
                         <div className="option-group">
+
                             <div className="option">
-                                <input type="radio" id="hpvYes" name="hpv" value="yes" required />
-                                <label htmlFor="hpvYes">Yes</label>
+                                <input
+                                    type="radio"
+                                    id="hpvYes"
+                                    name="hpv"
+                                    value="yes"
+                                    checked={data.hpv === "yes"}
+                                />
+
+                                <label htmlFor="hpvYes">
+                                    Yes
+                                </label>
                             </div>
+
+
                             <div className="option">
-                                <input type="radio" id="hpvNo" name="hpv" value="no" />
-                                <label htmlFor="hpvNo">No</label>
+                                <input
+                                    type="radio"
+                                    id="hpvNo"
+                                    name="hpv"
+                                    value="no"
+                                    checked={data.hpv === "no"}
+                                />
+
+                                <label htmlFor="hpvNo">
+                                    No
+                                </label>
                             </div>
+
                         </div>
                     </li>
 
+
+
+
+                    {/* Hepatitis B */}
                     <li>
                         <p>Hepatitis B Vaccine (2 or 3 doses)</p>
+
                         <div className="option-group">
+
                             <div className="option">
-                                <input type="radio" id="hepBYes" name="hepB" value="yes" required />
-                                <label htmlFor="hepBYes">Yes</label>
+                                <input
+                                    type="radio"
+                                    id="hepBYes"
+                                    name="hepatitisB"
+                                    value="yes"
+                                    checked={data.hepatitisB === "yes"}
+                                />
+
+                                <label htmlFor="hepBYes">
+                                    Yes
+                                </label>
                             </div>
+
+
                             <div className="option">
-                                <input type="radio" id="hepBNo" name="hepB" value="no" />
-                                <label htmlFor="hepBNo">No</label>
+                                <input
+                                    type="radio"
+                                    id="hepBNo"
+                                    name="hepatitisB"
+                                    value="no"
+                                    checked={data.hepatitisB === "no"}
+                                />
+
+                                <label htmlFor="hepBNo">
+                                    No
+                                </label>
                             </div>
+
                         </div>
                     </li>
+
+
                 </ul>
+
             </fieldset>
         </div>
     );
