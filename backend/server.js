@@ -1,12 +1,28 @@
-const express = require("express")
-const app = express()
-const PORT = 3000
+const express = require("express");
+const cors = require("cors");
+const db = require("./config/db");
+require("dotenv").config();
 
-app.get("/", (req,res)=> {
-    res.write('You are connected to network')
-    res.end()
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+const PORT = 3000;
+
+db.connect((err)=> {
+    if(err) {
+        console.log("Database connection failed:", err.message)
+    }
+    else {
+        console.log("Connected to MySQL database");
+    }
 })
 
-app.listen(PORT, ()=> {
-    console.log("You are connected to port 3000")
+app.get('/', (req,res)=>{
+    res.send("SIP backend is running")
 })
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
