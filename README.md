@@ -33,41 +33,75 @@ follow-up calls, or redistribution cycles, and
 giving school health staff a centralized portal to manage submissions, 
 track consent status, and reduce manual follow-up.
 
-## Tech Stack
-**Frontend:** HTML, CSS, JavaScript, React
-**Backend:** Node.js, Express.js  
-**Database:** PostgreSQL (planned)
-**Authentication:** Passport.js (planned)
+Tech Stack
 
-## Status
+Frontend:
 
-🚧 **This project is actively in development. **
+React
+JavaScript
+HTML5
+CSS3
+Vite
 
-    ✅ React project setup (using Vite or Create React App)
-    ✅ Created multiple components (StudentInformation, VaccineHistory, Header)
-    ✅ Organized files in a components folder
-    ✅ Imported/exported components correctly
-    ✅ Clean HTML/JSX structure with forms
-    ✅ Basic CSS styling
-    ✅ Pushed to GitHub
-    ✅ Fixed common React gotchas (className, htmlFor, self-closing tags)
+Backend:
 
+Node.js
+Express.js
+RESTful API
+CORS
+JSON middleware
 
-    📋 Remaining Tasks
-      □ Add state - useState for form data and submission status
-      □ Connect inputs - Add value/onChange/checked to all form fields
-      □ Handle submit - Submit handler with e.preventDefault() and console.log
-      □ Show success - Display submitted data and success message
-      □ Add validation - Required fields, phone number, date validation
-      □ Show errors - Display error messages inline
-      □ API integration - Connect to backend and save data
-      □ Deploy - Deploy to Vercel/Netlify or GitHub Pages
-      
-- [ ] PostgreSQL database connection
-- [ ] Nurse portal
-- [ ] Admin portal
-- [ ] Role-based authentication
+Database:
 
-## Project Structure
+MySQL
+mysql2 connection pool
 
+Development Tools:
 
+Git & GitHub
+Postman
+VS Code
+
+Authentication:
+
+Role-based authentication (planned)
+Passport.js (planned)
+Status
+
+🚧 This project is actively in development.
+
+Completed Features
+
+✅ React project setup using Vite
+✅ Built reusable React components:
+
+StudentInformation
+VaccineHistory
+HealthHistory
+ConsentForVaccination
+ConsentDeclaration
+Header
+SubmitButton
+
+✅ Implemented controlled React components with state management
+✅ Built multi-step consent form structure
+✅ Added form handling and validation logic
+✅ Connected React frontend with Express backend API
+✅ Created REST API endpoint for consent submission
+✅ Implemented MySQL database integration
+✅ Designed database tables for:
+
+Students
+Vaccine history
+Health history
+Vaccine consent
+Parent declarations
+
+✅ Implemented backend modular architecture:
+
+Routes
+Controllers
+Database configuration
+
+✅ Tested API requests using Postman
+✅ Organized project files and pushed updates to GitHub
