@@ -33,7 +33,7 @@ follow-up calls, or redistribution cycles, and
 giving school health staff a centralized portal to manage submissions, 
 track consent status, and reduce manual follow-up.
 
-Tech Stack
+## Tech Stack
 
 Frontend:
 
