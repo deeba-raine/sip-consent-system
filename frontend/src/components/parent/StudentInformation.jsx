@@ -35,7 +35,7 @@ function StudentInformation({ data, handleChange }) {
 
                 <div className="form-field">
                     <label htmlFor="dob">Date of Birth</label>
-                    <input type="date" id="dob" name="dob" value={data.dob} onChange={handleChange} required />
+                    <input type="date" id="dob" name="dob" value={data.dob} onChange={handleChange} />
                 </div>
 
                 <div className="form-field">

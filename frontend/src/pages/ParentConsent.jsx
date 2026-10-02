@@ -80,6 +80,8 @@ const INITIAL_STATE = {
 
 function ParentConsent() {
   const [consentForm, setConsentForm] = useState(INITIAL_STATE);
+  const [submissionState, setSubmissionState] = useState("idle");
+  const [submissionMessage, setSubmissionMessage] = useState("");
 
   // Handle flat fields (studentInformation, consentForVaccination, consentDeclaration)
   const handleChange = (section, e) => {
@@ -111,56 +113,42 @@ function ParentConsent() {
   };
 
   const handleSubmit = async (e) => {
-
     e.preventDefault();
-
+    setSubmissionState("submitting");
+    setSubmissionMessage("");
 
     try {
+      const response = await fetch("http://localhost:3000/api/consent", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(consentForm)
+      });
+      const data = await response.json().catch(() => ({}));
 
-        const response = await fetch(
-            "http://localhost:3000/api/consent",
-            {
-                method: "POST",
+      if (!response.ok) {
+        const validationMessage = data.errors?.map((error) => error.msg).join(", ");
+        throw new Error(validationMessage || data.message || "The consent could not be submitted.");
+      }
 
-                headers: {
-                    "Content-Type": "application/json"
-                },
-
-                body: JSON.stringify(consentForm)
-            }
-        );
-
-
-        const data = await response.json();
-
-
-        console.log(data);
-
-
-        if(response.ok){
-
-            alert("Consent submitted successfully");
-
-        }
-        else{
-
-            alert("Submission failed");
-
-        }
-
-
-    } catch(error){
-
-        console.error("Error submitting form:", error);
-
+      setSubmissionState("success");
+      setSubmissionMessage(data.message || "Consent submitted successfully.");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setSubmissionState("error");
+      setSubmissionMessage(
+        error instanceof TypeError
+          ? "Could not connect to the consent server. Make sure the backend is running on port 3000."
+          : error.message
+      );
     }
-
-};
+  };
 
   return (
     <div>
       <Header />
-      <form onSubmit={handleSubmit}>
+      <form className="consent-form" onSubmit={handleSubmit}>
         <StudentInformation
           data={consentForm.studentInformation}
           handleChange={(e) => handleChange("studentInformation", e)}
@@ -187,7 +175,12 @@ function ParentConsent() {
         />
         
 
-        <SubmitButton />
+        {submissionMessage && (
+          <p className={`submission-message ${submissionState}`} role="status">
+            {submissionMessage}
+          </p>
+        )}
+        <SubmitButton isSubmitting={submissionState === "submitting"} />
       </form>
     </div>
   );

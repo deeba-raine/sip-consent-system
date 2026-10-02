@@ -6,7 +6,7 @@ function ConsentDeclaration({ data, handleChange }) {
 
                 <div className="form-field">
                     <label htmlFor="relationshipToStudent">Relationship to Student</label>
-                    <select id="relationshipToStudent" name="relationshipToStudent" value={data.relationshipToStudent} onChange={handleChange} required>
+                    <select id="relationshipToStudent" name="relationshipToStudent" value={data.relationshipToStudent} onChange={handleChange}>
                         <option value="">-- Select --</option>
                         <option value="parent">Parent</option>
                         <option value="legal_guardian">Legal Guardian</option>
@@ -15,32 +15,32 @@ function ConsentDeclaration({ data, handleChange }) {
 
                 <div className="form-field">
                     <label htmlFor="parentFirstName">First Name</label>
-                    <input type="text" id="parentFirstName" name="parentFirstName" value={data.parentFirstName} onChange={handleChange} required />
+                    <input type="text" id="parentFirstName" name="parentFirstName" value={data.parentFirstName} onChange={handleChange} />
                 </div>
 
                 <div className="form-field">
                     <label htmlFor="parentLastName">Last Name</label>
-                    <input type="text" id="parentLastName" name="parentLastName" value={data.parentLastName} onChange={handleChange} required />
+                    <input type="text" id="parentLastName" name="parentLastName" value={data.parentLastName} onChange={handleChange} />
                 </div>
 
                 <div className="form-field">
                     <label htmlFor="parentEmail">Email</label>
-                    <input type="email" id="parentEmail" name="parentEmail" value={data.parentEmail} onChange={handleChange} required />
+                    <input type="email" id="parentEmail" name="parentEmail" value={data.parentEmail} onChange={handleChange} />
                 </div>
 
                 <div className="form-field">
                     <label htmlFor="parentPhone">Phone Number</label>
-                    <input type="tel" id="parentPhone" name="parentPhone" maxLength="10" value={data.parentPhone} onChange={handleChange} required />
+                    <input type="tel" id="parentPhone" name="parentPhone" maxLength="10" value={data.parentPhone} onChange={handleChange} />
                 </div>
 
                 <div className="form-field">
                     <label htmlFor="signature">Electronic Signature (type your full name)</label>
-                    <input type="text" id="signature" name="signature" placeholder="Type your full name" value={data.signature} onChange={handleChange} required />
+                    <input type="text" id="signature" name="signature" placeholder="Type your full name" value={data.signature} onChange={handleChange} />
                 </div>
 
                 <div className="form-field">
                     <label htmlFor="consentDate">Date</label>
-                    <input type="date" id="consentDate" name="consentDate" value={data.consentDate} onChange={handleChange} required />
+                    <input type="date" id="consentDate" name="consentDate" value={data.consentDate} onChange={handleChange} />
                 </div>
 
                 <div className="option">

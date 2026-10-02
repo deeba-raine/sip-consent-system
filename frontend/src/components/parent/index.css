@@ -1,139 +1,241 @@
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+}
+
+:root {
+  --parent-blue: #123d6b;
+  --parent-blue-light: #eaf3ff;
+  --parent-ink: #182b43;
+  --parent-muted: #66788d;
+  --parent-border: #dce4ed;
+  --parent-background: #f5f8fb;
 }
 
 body {
+  background: var(--parent-background);
+  color: var(--parent-ink);
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
 }
 
 .header {
+  color: var(--parent-blue);
+  font-size: clamp(24px, 4vw, 34px);
+  font-weight: 700;
+  margin: 0;
+  padding: 34px 20px 24px;
   text-align: center;
-  margin: 30px 0;
 }
 
-/* general wrapper for any form section */
+.consent-form {
+  margin: 0 auto;
+  max-width: 780px;
+  padding: 0 20px 42px;
+}
+
 .form-section {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .form-section fieldset {
+  background: #fff;
+  border: 1px solid var(--parent-border);
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(18, 61, 107, 0.06);
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  width: 700px;
+  gap: 16px;
+  margin: 0;
+  min-width: 0;
+  padding: 24px;
+}
 
-  padding: 20px;
+.form-section legend {
+  color: var(--parent-blue);
+  font-size: 18px;
+  font-weight: 700;
+  padding: 0 8px;
+}
+
+.form-section fieldset > p {
+  color: var(--parent-muted);
+  line-height: 1.55;
+  margin: 0;
 }
 
 .nested-fieldset {
-  border: 1px solid grey;
-  padding: 10px;
+  border: 1px solid var(--parent-border);
+  border-radius: 8px;
+  padding: 14px;
 }
 
-/* label + input pairs */
+.nested-fieldset legend {
+  font-size: 14px;
+}
+
 .form-field {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
-.form-field label {
-  font-weight: bold;
+.form-field label,
+.form-section li > p,
+.note-label,
+.vaccine-name {
+  color: var(--parent-ink);
+  font-weight: 600;
 }
 
+.form-field input,
+.form-field select,
+.form-field textarea,
 input[type="text"],
 input[type="email"],
 input[type="tel"],
-input[type="date"] {
-  width: 300px;
-  height: 28px;
-  border: 1px solid grey;
-  border-radius: 5px;
-}
-
-input[type="radio"] {
-  all: revert;
-}
-
-select {
-  width: 300px;
-  height: 32px;
-  border: 1px solid grey;
-  border-radius: 5px;
+input[type="date"],
+select,
+textarea {
+  background: #fff;
+  border: 1px solid var(--parent-border);
+  border-radius: 7px;
+  color: var(--parent-ink);
+  font: inherit;
+  min-height: 40px;
+  padding: 9px 11px;
+  width: 100%;
 }
 
 textarea {
-  width: 100%;
-  border: 1px solid grey;
-  border-radius: 5px;
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 6px;
+  min-height: 76px;
+  resize: vertical;
 }
 
-/* radio/checkbox groups, e.g. gender, yes/no questions */
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+  border-color: #4a8ac5;
+  box-shadow: 0 0 0 3px rgba(74, 138, 197, 0.14);
+  outline: none;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: var(--parent-blue);
+}
+
 .option-group {
   display: flex;
-  flex-direction: row;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 18px;
 }
 
 .option {
-  display: flex;
   align-items: center;
-  gap: 6px;
-}
-
-/* vaccine history specific */
-.vaccine-question {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  gap: 7px;
 }
 
+.option label {
+  color: var(--parent-ink);
+}
+
+.vaccine-question,
 .vaccine-details {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin-left: 20px;
+  gap: 8px;
 }
 
-.vaccine-name {
-  font-weight: bold;
+.vaccine-details {
+  background: #f8fbfe;
+  border-left: 3px solid var(--parent-blue-light);
+  margin-left: 4px;
+  padding: 12px 14px;
 }
 
-ol, ul {
+ol,
+ul {
   display: flex;
   flex-direction: column;
   gap: 20px;
   list-style-position: inside;
+  margin: 0;
+  padding-left: 0;
 }
 
-ol li, ul li {
+ol li,
+ul li {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.note-label {
-  font-weight: 600;
+.form-section li > p {
+  line-height: 1.5;
+  margin: 0;
 }
 
-button[type="submit"] {
-  width: 200px;
-  height: 40px;
-  background-color: rgb(82, 171, 82);
-  color: aliceblue;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  align-self: center;
+.consent-form > button[type="submit"] {
+  background: var(--parent-blue);
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
   cursor: pointer;
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 24px auto 0;
+  min-height: 46px;
+  padding: 0 30px;
+  transition: background 0.2s, transform 0.2s;
 }
 
-button[type="submit"]:hover {
-  background-color: rgb(65, 145, 65);
+.consent-form > button[type="submit"]:disabled {
+  cursor: wait;
+  opacity: 0.7;
+  transform: none;
+}
+
+.submission-message {
+  border-radius: 8px;
+  font-size: 14px;
+  margin: 20px 0 0;
+  padding: 12px 14px;
+  text-align: center;
+}
+
+.submission-message.success {
+  background: #e8f5eb;
+  color: #246b35;
+}
+
+.submission-message.error {
+  background: #fdf0ee;
+  color: #a12e24;
+}
+
+.consent-form > button[type="submit"]:hover {
+  background: #0c2d51;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding-top: 24px;
+  }
+
+  .consent-form {
+    padding: 0 12px 30px;
+  }
+
+  .form-section fieldset {
+    padding: 18px 16px;
+  }
 }
