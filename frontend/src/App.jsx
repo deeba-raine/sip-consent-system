@@ -1,10 +1,7 @@
-import ParentConsent from "./pages/ParentConsent";
-import NursePortal from "./components/nurse/NursePortal";
+import NurseDashboard from './components/nurseDashbaord/NurseDashbaord'
 
 function App() {
-  const isNursePortal = new URLSearchParams(window.location.search).get("portal") === "nurse";
-
-  return isNursePortal ? <NursePortal /> : <ParentConsent />;
+  return <NurseDashboard />
 }
 
-export default App;
+export default App

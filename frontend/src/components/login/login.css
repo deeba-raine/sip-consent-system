@@ -1,0 +1,59 @@
+.login {
+  width: 350px;
+  margin: 6rem auto;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px #0001;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font: 14px Arial, sans-serif;
+}
+
+.login h1 {
+  margin: 0 0 0.5rem;
+  color: midnightblue;
+  text-align: center;
+}
+
+.login label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  text-align: left;
+  font-weight: bold;
+}
+
+.login input,
+.login button {
+  height: 36px;
+  padding: 0 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  font: inherit;
+}
+
+.login button {
+  border-color: midnightblue;
+  color: white;
+  background: midnightblue;
+  cursor: pointer;
+}
+
+.login button:hover {
+  background: #373795;
+}
+
+#message {
+  margin: 0;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .login {
+    width: calc(100% - 2rem);
+    margin: 2rem auto;
+    padding: 1.5rem;
+  }
+}

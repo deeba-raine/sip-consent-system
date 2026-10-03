@@ -1,0 +1,79 @@
+.assessment-card {
+  max-width: 760px;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.assessment-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.assessment-header h2 {
+  margin: 0;
+  color: var(--blue);
+  font-family: Georgia, serif;
+}
+
+.assessment-student {
+  margin: 0.4rem 0 0;
+  color: var(--grey);
+}
+
+.assessment-form {
+  display: grid;
+  gap: 1rem;
+  padding-top: 1.5rem;
+}
+
+.assessment-form label {
+  display: grid;
+  gap: 0.35rem;
+  color: var(--grey-dark);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.assessment-form input,
+.assessment-form select,
+.assessment-form textarea {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: #1a1a1a;
+  background: var(--white);
+  font: inherit;
+}
+
+.assessment-form input:focus,
+.assessment-form select:focus,
+.assessment-form textarea:focus {
+  border-color: var(--blue-mid);
+  outline: 3px solid rgb(0 85 165 / 12%);
+}
+
+.assess-submit {
+  justify-self: start;
+  padding: 0.65rem 1rem;
+  border: 0;
+  border-radius: var(--radius);
+  color: var(--white);
+  background: var(--green);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .assessment-header {
+    flex-direction: column;
+  }
+}

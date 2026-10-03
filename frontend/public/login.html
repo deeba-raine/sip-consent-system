@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nurse Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login">
+        <form id="login-form" method="POST" action="/login">
+            <h1>Nurse Portal</h1>
+            <p>Sign in to view student records</p>
+
+            <div class="email">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email"
+                       placeholder="user@example.com"
+                       autocomplete="username" required>
+            </div>
+
+            <div class="password">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password"
+                       autocomplete="current-password" required>
+            </div>
+
+            <button type="submit">Sign in</button>
+            <p id="message"></p>
+        </form>
+    </div>
+
+</body>
+</html>
